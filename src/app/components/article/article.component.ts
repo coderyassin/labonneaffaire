@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './article.component.css'
 })
 export class ArticleComponent {
-
+  titreArticle: string = "Titre de l'article";
+  prixArticle: number = 12;
 }
