@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgClass, NgIf, NgOptimizedImage, NgStyle} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -10,7 +11,8 @@ import {NgClass, NgIf, NgOptimizedImage, NgStyle} from '@angular/common';
     NgOptimizedImage,
     NgIf,
     NgStyle,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'

@@ -14,6 +14,9 @@
     </h5>
     <h6 class="card-title"> {{ prixArticle }} € </h6>
     <p class="card-text">Une description</p>
+    <div class="mb-3">
+      <a routerLink="/details">Voir l'article</a>
+    </div>
     <button
       (click)="onLike()"
       [ngClass]="jaime ? 'show': 'hidden'">
