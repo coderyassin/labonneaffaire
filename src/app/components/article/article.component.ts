@@ -22,6 +22,7 @@ export class ArticleComponent {
   comment: string = "Ceci est un commentaire";
   @Output() info = new EventEmitter<string>();
 
+  @Input() idArticle!: number;
   @Input() titreArticle!: string;
   @Input() prixArticle!: number;
   @Input() description!: string;
