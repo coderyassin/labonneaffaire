@@ -1,0 +1,12 @@
+.nolike {
+  background: #4267b2;
+  color: white;
+}
+
+.show {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}

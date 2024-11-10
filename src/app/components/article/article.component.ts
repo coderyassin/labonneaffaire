@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {NgIf, NgOptimizedImage} from '@angular/common';
+import {NgClass, NgIf, NgOptimizedImage, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-article',
@@ -8,7 +8,9 @@ import {NgIf, NgOptimizedImage} from '@angular/common';
   imports: [
     FormsModule,
     NgOptimizedImage,
-    NgIf
+    NgIf,
+    NgStyle,
+    NgClass
   ],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
@@ -24,9 +26,24 @@ export class ArticleComponent {
   @Input() urlImg!: string;
   @Input() textAltImg!: string;
   @Input() dispo!: boolean;
+  jaime: boolean = true;
 
   onLike() {
-    this.totalNbrLike++;
+    if (this.jaime) {
+      this.totalNbrLike++;
+      this.jaime = false;
+    } else {
+      this.totalNbrLike--;
+      this.jaime = true;
+    }
     this.info.emit(this.titreArticle);
+  }
+
+  getColor() {
+    if (this.dispo) {
+      return "green"
+    } else {
+      return "red"
+    }
   }
 }

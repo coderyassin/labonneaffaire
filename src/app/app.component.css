@@ -4,3 +4,8 @@
   color: green;
   font-size: 1.2rem;
 }
+
+.margin-main {
+  margin-right: 150px;
+  margin-left: 150px;
+}

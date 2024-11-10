@@ -12,8 +12,9 @@
       {{ message }}
     </p>
   </div>
-  <main class="row flex-grow-1 pt-4 m-lg-5" *ngFor="let item of [0,1,2]">
-      <div class="col-md-3" *ngFor="let element of liste">
+  <div class="margin-main">
+    <main class="row flex-grow-1 pt-4 m-lg-5" *ngFor="let item of [0,1,2]">
+      <div class="col-md-4" *ngFor="let element of list">
         <div class="list-group">
           <app-article
             [prixArticle]="element.prixArticle"
@@ -22,10 +23,11 @@
             [urlImg]="element.urlImg"
             [textAltImg]="element.textAltImg"
             [dispo]="element.dispo"
-          (info)="onAffiche($event)"></app-article>
+            (info)="onAffiche($event)"></app-article>
         </div>
       </div>
-  </main>
+    </main>
+  </div>
 
   <!-- Pied de page -->
   <footer class="row mt-auto">
