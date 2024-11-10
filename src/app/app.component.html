@@ -7,22 +7,24 @@
   </nav>
 
   <!-- Contenu principal -->
-  <main class="row flex-grow-1 pt-4 m-lg-5">
-    <div class="col-md-4">
-      <div class="list-group">
-        <app-article></app-article>
+  <div id="alertMsg">
+    <p>
+      {{ message }}
+    </p>
+  </div>
+  <main class="row flex-grow-1 pt-4 m-lg-5" *ngFor="let item of [0,1,2]">
+      <div class="col-md-3" *ngFor="let element of liste">
+        <div class="list-group">
+          <app-article
+            [prixArticle]="element.prixArticle"
+            [titreArticle]="element.titreArticle"
+            [description]="element.description"
+            [urlImg]="element.urlImg"
+            [textAltImg]="element.textAltImg"
+            [dispo]="element.dispo"
+          (info)="onAffiche($event)"></app-article>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="list-group">
-        <app-article></app-article>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="list-group">
-        <app-article></app-article>
-      </div>
-    </div>
   </main>
 
   <!-- Pied de page -->

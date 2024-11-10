@@ -1,9 +1,28 @@
 <div class="card articleInfo">
-  <img src="" alt="">
+  <img
+    [ngSrc]="urlImg"
+    width="330"
+    height="200"
+    priority
+    [alt]="textAltImg">
   <div class="card-body">
-    <h5 class="card-title"> {{ titreArticle }} </h5>
+    <h5 class="card-title">
+      {{ titreArticle }}
+      <span *ngIf="!dispo"> Unavailable</span>
+    </h5>
     <h6 class="card-title"> {{ prixArticle }} € </h6>
     <p class="card-text">Une description</p>
-    <button class="btn btn-primary">J'aime</button>
+    <button class="btn btn-primary" (click)="onLike()">J'aime</button>
+    <p>Nombre de like : {{ totalNbrLike }}</p>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        placeholder="Ecris ton commentaire"
+        class="form-control"
+        aria-label="Default"
+        aria-describedby="inputGroup-sizing-default"
+        [(ngModel)]="comment">
+    </div>
+    <p> {{ comment }} </p>
   </div>
 </div>
